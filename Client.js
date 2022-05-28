@@ -8,15 +8,8 @@ class SocialClient extends Client {
         super(options)
         this.client = new Client(options)
         this.commands = new Collection()
+        this.users = new Collection()
     }
-
-    // get commands() {
-    //     return this.commands
-    // }
-
-    // set commands(commands) {
-    //     this.commands = commands
-    // }
 }
 
 module.exports = SocialClient;

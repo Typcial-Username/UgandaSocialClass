@@ -1,6 +1,6 @@
 require('dotenv').config()
 const SocialClient = require('./Client')
-const { Intents } = require('discord.js')
+const { Intents, Client, Collection } = require('discord.js')
 
 const client = new SocialClient({
     intents: [
@@ -9,6 +9,8 @@ const client = new SocialClient({
         Intents.FLAGS.GUILD_MEMBERS
     ]
 })
+
+// client.commands = new Collection()
 
 const fs = require('node:fs');
 const path = require('node:path');
@@ -36,5 +38,6 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+
 
 client.login(process.env.TOKEN)
